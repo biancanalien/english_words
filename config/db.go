@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/bianca.pereira/english_words/models"
+	"github.com/bianca.pereira/english_words/controller"
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
 )
@@ -16,7 +16,7 @@ func Connection() *gorm.DB {
 	if err != nil {
 		fmt.Println("Error while try to connect on mysql ", err)
 	}
-	db.AutoMigrate(&models.Vocabulary{})
+	db.AutoMigrate(&controller.Vocabulary{})
 	return db
 }
 
